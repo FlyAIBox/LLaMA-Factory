@@ -170,7 +170,7 @@ ms_cache/
 hf_cache/
 om_cache/
 cache/
-config/
+# config/
 saves/
 output/
 wandb/
