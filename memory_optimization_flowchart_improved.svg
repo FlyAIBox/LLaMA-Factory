@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1500 1100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 渐变定义 -->
+    <linearGradient id="startGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4CAF50;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#66BB6A;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="decisionGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF9800;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFB74D;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="basicGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F44336;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#EF5350;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="advancedGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2196F3;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#42A5F5;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="performanceGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#9C27B0;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#BA68C8;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="warningGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF5722;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FF7043;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- 阴影滤镜 -->
+    <filter id="dropshadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="2" stdDeviation="2" flood-color="#00000030"/>
+    </filter>
+    
+    <style>
+      .chinese { font-family: "SimSun", "宋体", serif; font-size: 14px; fill: #333; font-weight: bold; }
+      .english { font-family: "Times New Roman", serif; font-size: 12px; fill: #555; }
+      .formula { font-family: "Times New Roman", serif; font-size: 11px; font-style: italic; fill: #2c3e50; }
+      .title { font-family: "SimSun", "宋体", serif; font-size: 22px; font-weight: bold; fill: #1a237e; }
+      .subtitle { font-family: "SimSun", "宋体", serif; font-size: 12px; fill: #546e7a; }
+      .parameter { font-family: "Courier New", monospace; font-size: 10px; fill: #ffffff; font-weight: bold; }
+      .benefit { font-family: "SimSun", "宋体", serif; font-size: 10px; fill: #ffffff; font-weight: bold; }
+      
+      .start-end { fill: url(#startGradient); stroke: #388E3C; stroke-width: 3; filter: url(#dropshadow); }
+      .decision { fill: url(#decisionGradient); stroke: #F57C00; stroke-width: 3; filter: url(#dropshadow); }
+      .basic-opt { fill: url(#basicGradient); stroke: #D32F2F; stroke-width: 3; filter: url(#dropshadow); }
+      .advanced-opt { fill: url(#advancedGradient); stroke: #1976D2; stroke-width: 3; filter: url(#dropshadow); }
+      .performance { fill: url(#performanceGradient); stroke: #7B1FA2; stroke-width: 3; filter: url(#dropshadow); }
+      .formula-box { fill: #f8f9fa; stroke: #607d8b; stroke-width: 2; stroke-dasharray: 5,5; filter: url(#dropshadow); }
+      .warning-box { fill: url(#warningGradient); stroke: #D84315; stroke-width: 3; filter: url(#dropshadow); }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#34495e" />
+    </marker>
+  </defs>
+  
+  <!-- 背景网格 -->
+  <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
+    <path d="M 50 0 L 0 0 0 50" fill="none" stroke="#e0e0e0" stroke-width="1" opacity="0.2"/>
+  </pattern>
+  <rect width="100%" height="100%" fill="url(#grid)" />
+  
+  <!-- Title Section -->
+  <rect x="100" y="20" width="1300" height="60" rx="10" fill="#e8eaf6" stroke="#3f51b5" stroke-width="2" filter="url(#dropshadow)"/>
+  <text x="750" y="45" text-anchor="middle" class="title">🧠 LLaMA Factory 显存优化决策树</text>
+  <text x="750" y="65" text-anchor="middle" class="subtitle">Memory Optimization Decision Tree for Large Language Model Training</text>
+  
+  <!-- Start Node -->
+  <ellipse cx="750" cy="140" rx="100" ry="35" class="start-end"/>
+  <text x="750" y="135" text-anchor="middle" class="chinese">🚀 启动训练进程</text>
+  <text x="750" y="150" text-anchor="middle" class="english">Initialize Training</text>
+  
+  <!-- Memory Assessment -->
+  <polygon points="750,200 850,240 750,280 650,240" class="decision"/>
+  <text x="750" y="235" text-anchor="middle" class="chinese">🔍 显存状态检测</text>
+  <text x="750" y="250" text-anchor="middle" class="english">Memory Assessment</text>
+  
+  <!-- Memory Formula Box -->
+  <rect x="120" y="280" width="350" height="60" rx="10" class="formula-box"/>
+  <text x="295" y="300" text-anchor="middle" class="chinese">💾 显存消耗估算公式</text>
+  <text x="295" y="320" text-anchor="middle" class="formula">Memory ≈ 1.5 × (Model + Optimizer) + Batch × Seq² × Hidden × 4bytes</text>
+  
+  <!-- LoRA Formula Box -->
+  <rect x="1030" y="280" width="350" height="60" rx="10" class="formula-box"/>
+  <text x="1205" y="300" text-anchor="middle" class="chinese">🎯 LoRA 参数效率公式</text>
+  <text x="1205" y="320" text-anchor="middle" class="formula">Trainable = 2 × d × r × layers, ΔW = (α/r) × B × A</text>
+  
+  <!-- Basic Optimization Branch -->
+  <rect x="150" y="360" width="200" height="140" rx="15" class="basic-opt"/>
+  <text x="250" y="385" text-anchor="middle" class="chinese">🛠️ 基础优化策略</text>
+  <text x="250" y="405" text-anchor="middle" class="english">Basic Optimization</text>
+  <text x="250" y="430" text-anchor="middle" class="parameter">per_device_train_batch_size = 1</text>
+  <text x="250" y="445" text-anchor="middle" class="parameter">bf16 = True</text>
+  <text x="250" y="460" text-anchor="middle" class="parameter">cutoff_len = 1024</text>
+  <text x="250" y="480" text-anchor="middle" class="benefit">💾 减少50%显存占用</text>
+  
+  <!-- Advanced Optimization Branch -->
+  <rect x="400" y="360" width="200" height="140" rx="15" class="advanced-opt"/>
+  <text x="500" y="385" text-anchor="middle" class="chinese">⚡ 高级优化策略</text>
+  <text x="500" y="405" text-anchor="middle" class="english">Advanced Optimization</text>
+  <text x="500" y="430" text-anchor="middle" class="parameter">flash_attn = "fa2"</text>
+  <text x="500" y="445" text-anchor="middle" class="parameter">liger_kernel = True</text>
+  <text x="500" y="460" text-anchor="middle" class="parameter">gradient_checkpointing = True</text>
+  <text x="500" y="480" text-anchor="middle" class="benefit">🚀 额外节省30-40%显存</text>
+  
+  <!-- Performance Tuning Branch -->
+  <rect x="1050" y="360" width="200" height="140" rx="15" class="performance"/>
+  <text x="1150" y="385" text-anchor="middle" class="chinese">📈 性能调优策略</text>
+  <text x="1150" y="405" text-anchor="middle" class="english">Performance Tuning</text>
+  <text x="1150" y="430" text-anchor="middle" class="parameter">cutoff_len = 2048-4096</text>
+  <text x="1150" y="445" text-anchor="middle" class="parameter">lora_rank = 16-64</text>
+  <text x="1150" y="460" text-anchor="middle" class="parameter">learning_rate = 5e-4</text>
+  <text x="1150" y="480" text-anchor="middle" class="benefit">✨ 提升训练效果</text>
+  
+  <!-- Secondary Decision -->
+  <polygon points="750,560 850,600 750,640 650,600" class="decision"/>
+  <text x="750" y="595" text-anchor="middle" class="chinese">✅ 训练稳定性检查</text>
+  <text x="750" y="610" text-anchor="middle" class="english">Training Stability Check</text>
+  
+  <!-- Fallback Strategy -->
+  <rect x="200" y="720" width="250" height="180" rx="15" class="warning-box"/>
+  <text x="325" y="745" text-anchor="middle" class="chinese">⚠️ 降级策略</text>
+  <text x="325" y="765" text-anchor="middle" class="english">Fallback Strategy</text>
+  <text x="325" y="790" text-anchor="middle" class="parameter">cutoff_len = 512</text>
+  <text x="325" y="805" text-anchor="middle" class="parameter">lora_rank = 8</text>
+  <text x="325" y="820" text-anchor="middle" class="parameter">lora_alpha = 16</text>
+  <text x="325" y="835" text-anchor="middle" class="parameter">deepspeed_stage = 3</text>
+  <text x="325" y="850" text-anchor="middle" class="parameter">cpu_offload = True</text>
+  <text x="325" y="875" text-anchor="middle" class="benefit">🔧 极限显存节省模式</text>
+  
+  <!-- Monitoring Section -->
+  <rect x="600" y="720" width="200" height="120" rx="15" class="advanced-opt"/>
+  <text x="700" y="745" text-anchor="middle" class="chinese">📊 训练监控</text>
+  <text x="700" y="765" text-anchor="middle" class="english">Training Monitoring</text>
+  <text x="700" y="785" text-anchor="middle" class="parameter">Loss Convergence</text>
+  <text x="700" y="800" text-anchor="middle" class="parameter">Memory Usage &lt; 85%</text>
+  <text x="700" y="815" text-anchor="middle" class="parameter">Gradient Stability</text>
+  
+  <!-- Success Node -->
+  <ellipse cx="1100" cy="780" rx="100" ry="35" class="start-end"/>
+  <text x="1100" y="775" text-anchor="middle" class="chinese">🎉 训练成功</text>
+  <text x="1100" y="790" text-anchor="middle" class="english">Training Success</text>
+  
+  <!-- Optimization Tips Box -->
+  <rect x="50" y="940" width="1400" height="100" rx="15" class="formula-box"/>
+  <text x="750" y="965" text-anchor="middle" class="chinese">🔑 关键优化技巧与性能指标</text>
+  
+  <text x="180" y="985" text-anchor="middle" class="subtitle">⚡ Flash Attention:</text>
+  <text x="180" y="1000" text-anchor="middle" class="formula">O(N) vs O(N²)</text>
+  <text x="180" y="1015" text-anchor="middle" class="subtitle">2-4x 速度提升</text>
+  
+  <text x="400" y="985" text-anchor="middle" class="subtitle">🔧 DeepSpeed ZeRO-3:</text>
+  <text x="400" y="1000" text-anchor="middle" class="formula">Memory/GPU = Params/N_GPUs</text>
+  <text x="400" y="1015" text-anchor="middle" class="subtitle">万亿参数支持</text>
+  
+  <text x="650" y="985" text-anchor="middle" class="subtitle">📊 梯度累积:</text>
+  <text x="650" y="1000" text-anchor="middle" class="formula">Batch = Micro × Steps</text>
+  <text x="650" y="1015" text-anchor="middle" class="subtitle">减少显存峰值</text>
+  
+  <text x="900" y="985" text-anchor="middle" class="subtitle">💾 混合精度:</text>
+  <text x="900" y="1000" text-anchor="middle" class="formula">BF16: 50% memory ↓</text>
+  <text x="900" y="1015" text-anchor="middle" class="subtitle">1.5-2x 速度提升</text>
+  
+  <text x="1150" y="985" text-anchor="middle" class="subtitle">🚀 Liger Kernel:</text>
+  <text x="1150" y="1000" text-anchor="middle" class="formula">Triton优化内核</text>
+  <text x="1150" y="1015" text-anchor="middle" class="subtitle">2-3x 速度提升</text>
+  
+  <text x="1320" y="985" text-anchor="middle" class="subtitle">🎯 LoRA效率:</text>
+  <text x="1320" y="1000" text-anchor="middle" class="formula">0.1-1% 参数</text>
+  <text x="1320" y="1015" text-anchor="middle" class="subtitle">全量效果90%</text>
+  
+  <!-- Arrows and Flow -->
+  <!-- 新增彩色箭头标记 -->
+  <marker id="arrowheadRed" markerWidth="12" markerHeight="8" refX="11" refY="4" orient="auto">
+    <polygon points="0 0, 12 4, 0 8" fill="#F44336" />
+  </marker>
+  <marker id="arrowheadBlue" markerWidth="12" markerHeight="8" refX="11" refY="4" orient="auto">
+    <polygon points="0 0, 12 4, 0 8" fill="#2196F3" />
+  </marker>
+  <marker id="arrowheadGreen" markerWidth="12" markerHeight="8" refX="11" refY="4" orient="auto">
+    <polygon points="0 0, 12 4, 0 8" fill="#4CAF50" />
+  </marker>
+  <marker id="arrowheadOrange" markerWidth="12" markerHeight="8" refX="11" refY="4" orient="auto">
+    <polygon points="0 0, 12 4, 0 8" fill="#FF9800" />
+  </marker>
+  
+  <!-- 主流程箭头 -->
+  <line x1="750" y1="175" x2="750" y2="195" stroke="#34495e" stroke-width="4" marker-end="url(#arrowhead)"/>
+  
+  <!-- 决策分支箭头 -->
+  <line x1="680" y1="260" x2="350" y2="345" stroke="#F44336" stroke-width="4" marker-end="url(#arrowheadRed)"/>
+  <text x="515" y="295" class="chinese" fill="#F44336" font-weight="bold">❌ OOM 错误</text>
+  
+  <line x1="670" y1="270" x2="500" y2="345" stroke="#2196F3" stroke-width="4" marker-end="url(#arrowheadBlue)"/>
+  <text x="585" y="315" class="chinese" fill="#2196F3" font-weight="bold">⚠️ 仍然OOM</text>
+  
+  <line x1="820" y1="260" x2="1150" y2="345" stroke="#4CAF50" stroke-width="4" marker-end="url(#arrowheadGreen)"/>
+  <text x="985" y="295" class="chinese" fill="#4CAF50" font-weight="bold">✅ 显存充足</text>
+  
+  <!-- 策略到稳定性检查 -->
+  <line x1="250" y1="500" x2="680" y2="545" stroke="#34495e" stroke-width="3" marker-end="url(#arrowhead)"/>
+  <line x1="500" y1="500" x2="720" y2="545" stroke="#34495e" stroke-width="3" marker-end="url(#arrowhead)"/>
+  <line x1="1150" y1="500" x2="780" y2="545" stroke="#34495e" stroke-width="3" marker-end="url(#arrowhead)"/>
+  
+  <!-- 稳定性检查到最终处理 -->
+  <line x1="680" y1="620" x2="450" y2="705" stroke="#FF5722" stroke-width="4" marker-end="url(#arrowheadRed)"/>
+  <text x="565" y="660" class="chinese" fill="#FF5722" font-weight="bold">❌ 不稳定</text>
+  
+  <line x1="750" y1="640" x2="700" y2="705" stroke="#00BCD4" stroke-width="4" marker-end="url(#arrowheadBlue)"/>
+  <text x="780" y="675" class="chinese" fill="#00BCD4" font-weight="bold">✅ 稳定运行</text>
+  
+  <!-- 监控到成功 -->
+  <line x1="800" y1="780" x2="1000" y2="780" stroke="#4CAF50" stroke-width="4" marker-end="url(#arrowheadGreen)"/>
+  
+  <!-- 重新评估路径 -->
+  <path d="M 325 900 Q 150 920 120 650 Q 120 400 650 240" 
+        stroke="#FF9800" stroke-width="3" fill="none" stroke-dasharray="8,8" marker-end="url(#arrowheadOrange)"/>
+  <text x="200" y="750" class="subtitle" fill="#FF9800" font-weight="bold">🔄 重新评估</text>
+  
+</svg> 

@@ -103,6 +103,8 @@ class DefaultToolUtils(ToolUtils):
         tool_names = []
         for tool in tools:
             param_text = ""
+            print("--- DEBUG: Inspecting tool variable ---")
+            print(tool)
             for name, param in tool["parameters"]["properties"].items():
                 required, enum, items = "", "", ""
                 if name in tool["parameters"].get("required", []):
